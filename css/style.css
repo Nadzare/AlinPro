@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #ff00b4;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Bagian header atau navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    text-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.8rem;
+}
+
+/* Bagian header atau navbar */
+
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 33vw;
+    animation: floatimage 4s ease-in-out infinite;
+}
+
+@keyframes floatimage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+   margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--text-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.kelompok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--second-bg-color);
+}
+
+.kelompok-img img {
+    width: 33vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.kelompok-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.kelompok-content h3 {
+    font-size: 2.6rem;
+}
+
+.kelompok-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+
+
+
+
+
+
+
+/* Section Materi */
+.materi {
+    background-color: #1b1b2f; /* Warna latar gelap */
+    color: #fff; /* Warna teks terang */
+    padding: 30px 20px; /* Padding untuk keseluruhan section */
+}
+
+.materi-container {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2a2a40; /* Latar belakang untuk teks */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow untuk estetika */
+    line-height: 1.8; /* Jarak antar baris */
+}
+
+.materi-container p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #cfcfcf; /* Warna teks yang lebih lembut */
+    text-align: justify;
+}
+
+.materi-container img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ff4dcf; /* Border gambar */
+    border-radius: 5px;
+}
+
+/* Teks tambahan dengan penekanan */
+.materi-container .jelas {
+    font-weight: bold;
+    color: #ffb6c1; /* Warna berbeda untuk kejelasan */
+    margin-top: 10px;
+}
+
+/* Styling untuk daftar materi */
+.materi-container ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.materi-container ul li {
+    margin-bottom: 0.5rem;
+    color: #ff4dcf; /* Warna poin daftar */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .materi h2 {
+        font-size: 2rem;
+    }
+
+    .materi-container {
+        padding: 15px;
+    }
+
+    .materi-container p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.contoh {
+    background: var(--second-bg-color);
+    padding-bottom: 60px;
+}
+
+.contoh h2 {
+    margin-bottom: 4rem;
+}
+
+.conso-container img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.contoh-container .contoh-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.contoh-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.contoh-box:hover img {
+    transform: scale(1.1);
+}
+
+.contoh-box .contoh-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.contoh-box:hover .contoh-layer {
+    transform: translateY(0);
+}
+
+.contoh-layer h4 {
+    font-size: 3rem;
+}
+
+.contoh-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.contoh-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.contoh-layer a i {
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    color: var(--text-color);
+}
+
+.footer a:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--text-color);
+}
+
+/* Breakpoint */
+@media (max-width: 1200px){
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px){
+    header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .materi {
+        padding-bottom: 7rem;
+    }
+
+    .contoh {
+        padding-bottom: 7rem;
+    }
+
+    .proyek {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+    
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .materi h2 {
+        margin-bottom: 3rem;
+    }
+
+    .contoh h2 {
+        margin-bottom: 3rem;
+    }
+
+    .contoh-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .contoh-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    .proyek form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}

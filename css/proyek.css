@@ -1,0 +1,198 @@
+
+
+/* Bagian Proyek */
+section.proyek1 {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.judul-proyek {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.matrices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.matrices > div {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    background-color: var(--second-bg-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.matrices h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--main-color);
+}
+
+.matrices table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+
+/* Warna untuk tabel matriks */
+.matrices table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    background-color: var(--bg-color); /* Menggunakan warna dasar */
+    color: var(--text-color); /* Warna teks putih */
+    font-size: 1rem;
+}
+
+/* Styling input dalam tabel */
+.matrices table td input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: var(--bg-color); /* Sesuai dengan root background */
+    color: var(--text-color); /* Teks putih */
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Efek hover dan fokus pada input */
+.matrices table td input:hover,
+.matrices table td input:focus {
+    outline: none;
+    background-color: var(--second-bg-color); /* Warna sekunder saat hover/fokus */
+    border: 1px solid var(--main-color); /* Highlight border */
+    box-shadow: 0px 0px 5px var(--main-color);
+}
+
+
+.matrices table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.matrices button {
+    padding: 10px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.matrices button:hover {
+    background-color: #ff4dcf;
+}
+
+.operations {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.operations button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.operations button:hover {
+    background-color: #ff4dcf;
+}
+
+
+.tambkuror button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.tambkuror button:hover {
+    background-color: #ff4dcf;
+}
+
+
+
+/* Styling tombol Decrease Order dan Increase Order */
+.order-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Memberikan jarak antar tombol */
+    margin-bottom: 20px; /* Memberikan jarak ke bawah */
+}
+
+.order-buttons button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.order-buttons button:hover {
+    background-color: #ff4dcf; /* Warna lebih cerah saat di-hover */
+}
+
+
+#result {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#result h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+#result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#result table td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+}
+
+button {
+    cursor: pointer;
+}
