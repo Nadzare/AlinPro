@@ -1,6 +1,7 @@
-// scroll section active link / Pindah Fungsi Class Pas di Scroll atau pindah slide
+// Pindah Fungsi Class Pas di Scroll atau pindah slide
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
+
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -30,16 +31,16 @@ window.onscroll = () => {
 
 
 
-//Proyek Aljabar Linear dan Matriks
-let matrixOrder = 3; // Default ordo matriks
+//Untuk bagian section proyek kalkulator matriks
+let ordoMatrix = 3; // Awal muncul tampilan ordo matriks 3x3
 
 // Membuat elemen input untuk matriks
-function createMatrixInputs(tableId) {
+function membuatInputanMatriks(tableId) {
   const table = document.getElementById(tableId);
-  table.querySelector('tbody').innerHTML = ''; // Hapus isi tabel sebelumnya
-  for (let i = 0; i < matrixOrder; i++) {
+  table.querySelector('tbody').innerHTML = '';
+  for (let i = 0; i < ordoMatrix; i++) {
     const row = document.createElement('tr');
-    for (let j = 0; j < matrixOrder; j++) {
+    for (let j = 0; j < ordoMatrix; j++) {
       const cell = document.createElement('td');
       const input = document.createElement('input');
       input.type = 'number';
@@ -51,33 +52,33 @@ function createMatrixInputs(tableId) {
   }
 }
 
-// Mendapatkan matriks dari input
-function getMatrix(tableId) {
+// Mengambil matriks dari input
+function mengambilMatrix(tableId) {
   const inputs = document.querySelectorAll(`#${tableId} input`);
   const matrix = [];
-  let isValid = true; // Flag untuk mengecek validitas input
+  let isValid = true; 
 
   inputs.forEach((input, index) => {
-    const row = Math.floor(index / matrixOrder);
+    const row = Math.floor(index / ordoMatrix);
     if (!matrix[row]) matrix[row] = [];
-    const value = input.value.trim(); // Hapus spasi berlebih
+    const value = input.value.trim(); 
 
     if (value === '') {
-      isValid = false; // Tandai jika ada input kosong
+      isValid = false; 
     }
-    matrix[row].push(Number(value) || 0); // Tambahkan nilai atau 0 sebagai fallback
+    matrix[row].push(Number(value) || 0); 
   });
 
   if (!isValid) {
     alert('Semua input harus diisi sebelum melakukan operasi perhitungan.');
-    return null; // Hentikan jika ada input kosong
+    return null; 
   }
 
   return matrix;
 }
 
 // Menampilkan hasil matriks
-function displayResult(matrix) {
+function menampilkanHasil(matrix) {
   const resultTable = document.getElementById('resultMatrix');
   resultTable.querySelector('tbody').innerHTML = '';
   for (let i = 0; i < matrix.length; i++) {
@@ -92,49 +93,49 @@ function displayResult(matrix) {
 }
 
 // Operasi Matriks
-function addMatrices() {
-  const A = getMatrix('matrixA');
-  const B = getMatrix('matrixB');
-  if (!A || !B) return; // Hentikan jika input tidak valid
+function tambahMatriks() {
+  const A = mengambilMatrix('matrixA');
+  const B = mengambilMatrix('matrixB');
+  if (!A || !B) return; 
 
   const result = A.map((row, i) => row.map((val, j) => val + B[i][j]));
-  displayResult(result);
+  menampilkanHasil(result);
 }
 
-function subtractMatrices() {
-  const A = getMatrix('matrixA');
-  const B = getMatrix('matrixB');
-  if (!A || !B) return; // Hentikan jika input tidak valid
+function kurangiMatriks() {
+  const A = mengambilMatrix('matrixA');
+  const B = mengambilMatrix('matrixB');
+  if (!A || !B) return; 
 
   const result = A.map((row, i) => row.map((val, j) => val - B[i][j]));
-  displayResult(result);
+  menampilkanHasil(result);
 }
 
-function multiplyMatrices() {
-  const A = getMatrix('matrixA');
-  const B = getMatrix('matrixB');
-  if (!A || !B) return; // Hentikan jika input tidak valid
+function kalikanMatrices() {
+  const A = mengambilMatrix('matrixA');
+  const B = mengambilMatrix('matrixB');
+  if (!A || !B) return; 
 
-  const result = Array.from({ length: matrixOrder }, () =>
-    Array(matrixOrder).fill(0)
+  const result = Array.from({ length: ordoMatrix }, () =>
+    Array(ordoMatrix).fill(0)
   );
-  for (let i = 0; i < matrixOrder; i++) {
-    for (let j = 0; j < matrixOrder; j++) {
-      for (let k = 0; k < matrixOrder; k++) {
+  for (let i = 0; i < ordoMatrix; i++) {
+    for (let j = 0; j < ordoMatrix; j++) {
+      for (let k = 0; k < ordoMatrix; k++) {
         result[i][j] += A[i][k] * B[k][j];
       }
     }
   }
-  displayResult(result);
+  menampilkanHasil(result);
 }
 
 // Mengubah ordo matriks
-function changeOrder(increment) {
-  matrixOrder = Math.max(2, matrixOrder + increment); // Minimal ordo adalah 2
-  createMatrixInputs('matrixA');
-  createMatrixInputs('matrixB');
+function mengubahOrdo(increment) {
+  ordoMatrix = Math.max(2, ordoMatrix + increment);
+  membuatInputanMatriks('matrixA');
+  membuatInputanMatriks('matrixB');
 
-  document.getElementById('orderDisplay').textContent = matrixOrder;
+  document.getElementById('orderDisplay').textContent = ordoMatrix;
 }
 
 
@@ -167,8 +168,8 @@ function transposeMatrix(matrix) {
 
 // Operasi transpose untuk matriks A
 function transposeMatrixA() {
-  const A = getMatrix('matrixA');
-  if (!A) return; // Hentikan jika input tidak valid
+  const A = mengambilMatrix('matrixA');
+  if (!A) return;
 
   const result = transposeMatrix(A);
   displayTranspose(result, 'resultMatrix');
@@ -176,8 +177,8 @@ function transposeMatrixA() {
 
 // Operasi transpose untuk matriks B
 function transposeMatrixB() {
-  const B = getMatrix('matrixB');
-  if (!B) return; // Hentikan jika input tidak valid
+  const B = mengambilMatrix('matrixB');
+  if (!B) return; 
 
   const result = transposeMatrix(B);
   displayTranspose(result, 'resultMatrix');
@@ -188,14 +189,14 @@ function transposeMatrixB() {
 function resetMatrix(tableId) {
   const inputs = document.querySelectorAll(`#${tableId} input`);
   inputs.forEach((input) => {
-    input.value = ''; // Hapus nilai input
+    input.value = '';
   });
 }
 
-function resetAllMatrices() {
+function mengubahSemuaMatriks() {
   resetMatrix('matrixA');
   resetMatrix('matrixB');
-  document.getElementById('resultMatrix').querySelector('tbody').innerHTML = ''; // Kosongkan tabel hasil
+  document.getElementById('resultMatrix').querySelector('tbody').innerHTML = '';
 }
 
 
@@ -203,6 +204,6 @@ function resetAllMatrices() {
 
 // Inisialisasi
 document.addEventListener('DOMContentLoaded', () => {
-  createMatrixInputs('matrixA');
-  createMatrixInputs('matrixB');
+  membuatInputanMatriks('matrixA');
+  membuatInputanMatriks('matrixB');
 });
