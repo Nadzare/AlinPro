@@ -49,7 +49,11 @@
 ## Tim Pengembang
 
 Aplikasi ini dikembangkan oleh **Kelompok Tiga** yang terdiri dari:
-- Nama-nama anggota yang tercantum pada halaman kelompok.
+- Nadzare Kafah Alfatiha (H1D023014)
+- Zaizafun Hanifah Zainnur Hanun (H1D023021)
+- Mukhammad Alfaen Fadillah (H1D023032)
+- Raia Digna Amanda (H1D023061)
+- M Edwi Tsanystya Raihan (H1D023087)
 
 ---
 
